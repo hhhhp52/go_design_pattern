@@ -20,7 +20,7 @@ type SweetPotatoFries struct {
 	state string
 }
 
-// Describe potato fries
+// Describe , here to make potato fries
 func (potatofries PotatoFries) Describe() {
 	if potatofries.state != "" {
 		fmt.Printf("This is %s potato fries\n", potatofries.state)
@@ -29,7 +29,7 @@ func (potatofries PotatoFries) Describe() {
 	}
 }
 
-// Describe sweet potato fries
+// Describe , here to make sweet potato fries
 func (sweetpotatofries SweetPotatoFries) Describe() {
 	if sweetpotatofries.state != "" {
 		fmt.Printf("This is %s sweet potato fries\n", sweetpotatofries.state)
@@ -45,17 +45,19 @@ func DescribeProduct(product Product) {
 	}
 }
 
-// GetProduct to get the product
+// GetProduct to get the Product for Fries
 func GetProduct(product string, state string) Product {
-	var flavor string
 
+	var flavor string
 	flavor = state
 
+	// To check flavor
 	if strings.EqualFold(flavor, "") && strings.EqualFold(flavor, "salt") && strings.EqualFold(flavor, "tomato") == false {
 		fmt.Printf("We don't have this flavor\n")
 		return nil
 	}
 
+	//To make fries
 	switch product {
 	case "potatofries":
 		return &PotatoFries{state: state}
