@@ -5,5 +5,8 @@ import (
 )
 
 func main() {
-	factory.Factory()
+
+	// design pattern : factory
+	product := factory.GetProduct("sweetpotatofries", "salt")
+	factory.DescribeProduct(product)
 }
